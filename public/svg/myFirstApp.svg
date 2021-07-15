@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    circle:hover {fill-opacity:0.9;}
+  </style>
+  <g style="fill-opacity:0.7;">
+    <circle cx="8"  cy="10" r="8" style="fill:red; stroke:black; stroke-width:0.05cm" transform="translate(0,7)" />
+    <circle cx="8" cy="10" r="8" style="fill:blue; stroke:black; stroke-width:0.05cm" transform="translate(7,15)" />
+    <circle cx="8" cy="10" r="8" style="fill:green; stroke:black; stroke-width:0.05cm" transform="translate(-8,15)"/>
+  </g>
+</svg>
