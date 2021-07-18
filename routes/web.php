@@ -16,13 +16,12 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 // Erdi ye <sorulacak> route yapisi
+Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::post('/follow/{user}', 'App\Http\Controllers\FollowsController@store');
 Route::get('/p/create', 'App\Http\Controllers\PostController@create');
 Route::get('/p/{post}', 'App\Http\Controllers\PostController@show');

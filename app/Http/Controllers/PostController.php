@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Contracts\Service\Attribute\Required;
@@ -13,6 +14,12 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+    public function index()
+    {
+        $users=auth()->user()->following()->pluck('profiles.user_id');
+        $posts=Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
+        return view('posts.index', compact('posts'));
     }
     public function create()
     {
