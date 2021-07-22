@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers;
+use App\Mail\NewUSerWelcomeMail;
+
 // use Vendor\laravel\framework\src\Illuminate\Auth;
 
 /*
@@ -21,6 +23,9 @@ use App\Http\Controllers;
 Auth::routes();
 
 // Erdi ye <sorulacak> route yapisi
+Route::get('/email', function(){
+    return new NewUSerWelcomeMail();
+});
 Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::post('/follow/{user}', 'App\Http\Controllers\FollowsController@store');
 Route::get('/p/create', 'App\Http\Controllers\PostController@create');
